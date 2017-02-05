@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改微博</title>
+</head>
+<body>
+    <form action="/tweet/update" method="post">
+        <input name="id" value="{{ tweet.id }}" hidden>
+        <input name="content" value="{{ tweet.content }}">
+        <button>修改微博</button>
+    </form>
+</body>
+</html>

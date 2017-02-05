@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发微博</title>
+</head>
+<body>
+    <form action="/comment/add" method="post">
+        <input name="tweet_id" value="{{ tweet_id }}" hidden>
+        <input name="content" placeholder="发表评论">
+        <button>发表评论</button>
+    </form>
+</body>
+</html>

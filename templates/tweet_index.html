@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>weibo index</title>
+</head>
+<body>
+    <a href="/tweet/new">发微博</a>
+    {% for t in tweets %}
+        <div>
+            {{ t.content }} : {{ user.username }} @ {{ t.updated_time }}
+            <a href="/tweet/edit?id={{ t.id }}">修改</a>
+            <a href="/tweet/delete?id={{ t.id }}">删除</a>
+            <a href="/comment/new?tweet_id={{ t.id }}">发表评论</a>
+            <div>
+                {% for c in t.comments %}
+                    <div>
+                        <a href="/comment/delete?id={{ c.id }}">删除评论</a>
+                        {{ c.id }} : {{ c.content }} 来自 {{ c.user_id }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</body>
+</html>
